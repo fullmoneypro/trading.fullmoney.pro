@@ -1,0 +1,503 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  color: #222222;
+  line-height: 1.6;
+}
+
+a {
+  color: #0a58ca;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px; /* kiri kanan seimbang */
+}
+
+/* =========================
+   TOP BANNER (GAMBAR SAJA)
+========================= */
+.top-banner {
+  background: url("img/banner.webp") center/cover no-repeat;
+  height: 260px;          /* tinggi banner jelas */
+}
+
+/* =========================
+   HEADING BAWAH BANNER
+========================= */
+.hero-heading {
+  max-width: 1200px;      /* ruang kiri kanan sama */
+  margin: 8px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.hero-heading h1 {
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* =========================
+   NAV MENU
+========================= */
+.nav-wrapper {
+  background: #0a58ca;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 8px 0;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+/* STRIP HITAM */
+.nav-wrapper::after {
+  content: "";
+  display: block;
+  height: 6px;
+  background: #000000;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  background: linear-gradient(135deg, #0b1c2d, #102f50);
+  color: #ffffff;
+  padding: 16px 22px;
+  border-radius: 14px;
+  margin: 12px auto;
+  text-align: center;
+  max-width: 900px;
+}
+
+.hero h2 {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* BRAND NOTE */
+.brand-note {
+  color: #f7a100;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   HOME TOPICS (9 CARD)
+========================= */
+.home-topics {
+  max-width: 1200px;
+  margin: 36px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* JUDUL SECTION */
+.home-topics .section-title {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+/* DESKRIPSI SECTION */
+.home-topics .section-desc {
+  max-width: 720px;
+  margin: 0 auto 26px;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* GRID */
+.home-topics .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+/* CARD */
+.home-topics .card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px 20px;
+  text-align: left;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* HOVER EFFECT (HALUS) */
+.home-topics .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+}
+
+/* JUDUL CARD */
+.home-topics .card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: #111;
+}
+
+/* TEKS CARD */
+.home-topics .card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
+  margin: 0 0 12px;
+}
+
+/* LINK */
+.home-topics .card a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0a58ca;
+  text-decoration: none;
+}
+
+.home-topics .card a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE FIX
+========================= */
+
+/* Desktop besar → 3 kolom rapi */
+@media (min-width: 992px) {
+  .home-topics .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile → padding lebih rapat */
+@media (max-width: 480px) {
+  .home-topics {
+    margin: 28px auto;
+  }
+
+  .home-topics .card {
+    padding: 18px 16px;
+  }
+}
+
+/* =========================
+   HOME CTA
+========================= */
+.home-cta {
+  max-width: 900px;
+  margin: 60px auto 40px;
+  padding: 36px 24px;
+  text-align: center;
+  background: linear-gradient(135deg, #0b1c2d, #102f50);
+  border-radius: 16px;
+  color: #ffffff;
+}
+
+/* JUDUL CTA */
+.home-cta h2 {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+/* DESKRIPSI */
+.home-cta p {
+  max-width: 720px;
+  margin: 0 auto 22px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+/* TOMBOL */
+.home-cta .cta-button {
+  display: inline-block;
+  padding: 12px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0b1c2d;
+  background: #f7a100;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* HOVER HALUS */
+.home-cta .cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   RISK WARNING
+========================= */
+.risk-warning {
+  background: #fff3cd;
+  border-left: 5px solid #ffca2c;
+  padding: 20px;
+  margin: 40px 0;
+  border-radius: 10px;
+}
+
+.risk-warning h3 {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.risk-warning p {
+  font-size: 14px;
+  color: #333333;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.site-footer {
+  background: #0b1c2d;
+  color: #cfd8dc;
+  margin-top: 50px;
+  padding: 25px 0;
+}
+
+.site-footer p {
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.site-footer a {
+  color: #ffffff;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE (MOBILE)
+========================= */
+@media (max-width: 768px) {
+  .top-banner {
+    padding: 85px 0 35px;
+  }
+
+  .top-banner h1 {
+    font-size: 24px;
+  }
+
+  .main-nav {
+    gap: 14px;
+  }
+}
+
+.toc {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  padding: 16px 18px;
+  margin: 24px 0;
+  border-radius: 10px;
+}
+
+.toc h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.toc ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin-bottom: 6px;
+}
+
+.toc a {
+  text-decoration: none;
+  color: #0a58ca;
+  font-size: 14px;
+}
+
+.info-box {
+  background: #f1f5f9;
+  border-left: 4px solid #0a58ca;
+  padding: 14px 16px;
+  margin: 24px 0;
+  font-size: 15px;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.breadcrumb a {
+  color: #0a58ca;
+  text-decoration: none;
+}
+
+
+/* =========================
+   HOME INTRO (CENTERED)
+========================= */
+.home-intro {
+  max-width: 800px;
+  margin: 30px auto 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* =========================
+   WHO THIS WEBSITE IS FOR
+========================= */
+.home-for {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.home-for h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.home-for ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+
+.home-for li {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #444;
+}
+
+/* WIDE NATIVE AD (728x90) */
+.native-ad-wide {
+  max-width: 100%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.native-ad-wide iframe {
+  max-width: 100%;
+}
+
+/* kecilkan otomatis di mobile */
+@media (max-width: 768px) {
+  .native-ad-wide iframe {
+    width: 320px;
+    height: 100px;
+  }
+}
+
+.native-ad .ad-note {
+  font-size: 11px;
+  color: #777;
+  margin-top: 4px;
+}
+
+
+/* FOOTER BANNER AD (720x90) */
+.native-ad-footer {
+  max-width: 100%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.native-ad-footer img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive fallback */
+@media (max-width: 768px) {
+  .native-ad-footer img {
+    width: 320px;
+    height: 40px;
+  }
+}
+
+.native-ad-script {
+  max-width: 100%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.native-ad-script iframe,
+.native-ad-script ins,
+.native-ad-script div {
+  margin: 0 auto;
+}
+
+.ad-label {
+  display: block;
+  font-size: 11px;
+  color: #777;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.ad-note {
+  font-size: 11px;
+  color: #777;
+  margin-top: 6px;
+}
+
+.native-ad {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.native-ad img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.native-ad-large {
+  max-width: 970px;
+}
+
+
+
